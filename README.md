@@ -9,4 +9,4 @@
 - rate all services
 
 #### created by @BenSchokoRiegel, @AlaaElBouhdidi, @vtolas
-#### for university course: Konzepte Moderner Software Entwicklung
+#### for university course: Konzepte Moderner Softwareentwicklung
