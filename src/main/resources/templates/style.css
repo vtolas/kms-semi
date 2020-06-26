@@ -4,7 +4,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-header{
+header .nav{
     background-color: white;
     border-bottom: rgb(0, 90, 81) 3px solid;
 }
@@ -12,18 +12,18 @@ header{
 #body {
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("../assets/trucks.jpg");
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("assets/trucks.jpg");
     background-position: center;
     background-size: cover;
     position: absolute;
 }
-.form-box{
+.form-box{ 
     width: 380px;
     height: 580px;
     position: relative;
     margin: 5% auto;
     background: #fff;
-    padding: 0;
+    padding: 0%;
     overflow: hidden;
 }
 .button-box{
@@ -85,3 +85,71 @@ header{
 #register{
     left: 450px
 }
+
+.card img{
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+.home-container{
+    margin: 10%;
+}
+.result-container{
+    margin: 5%;
+}
+.card-footer{
+    position: relative;
+    padding: 0, 0, 0, 0;
+}
+.search-container{
+    position: relative;
+    margin: 5% auto;
+    padding: 1%;
+    max-width: 500px;
+    background: #fff;
+}
+
+.profil-container{
+    position: relative;
+    margin: 2% auto;
+    padding: 1%;
+    max-width: 700px;
+    background: #fff;
+}
+
+
+/* .container{
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card{
+    position: relative;
+    left: 0%;
+    width: 300px;
+    transition: 0.3s ease-out;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.7);
+}
+.card .imgbox{
+    position: relative;
+    top: 0;
+    left: 0;
+    
+}
+.card .imgbox img{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    display: block;
+    transition: 0.5s;
+} 
+.card .content{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+} */
