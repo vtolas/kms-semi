@@ -95,11 +95,60 @@ header .nav{
     margin: 10%;
 }
 .result-container{
-    margin: 5%;
+    position: relative;
+    margin: 5% auto;
+    max-width: 500px;
+    max-height: 570px;
+    background: #fff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: transparent;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+  .review-container{
+    position: relative;
+    margin: 5% auto;
+    max-width: 500px;
+    max-height: 370px;
+    background: #fff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: transparent;
+}
+
+#reviewed-profile{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 .card-footer{
     position: relative;
-    padding: 0, 0, 0, 0;
+    padding: 0;
+    
+}
+.card-footer a img{
+    width: 30px;
+    height: 30px;
+    object-fit: fill;
 }
 .search-container{
     position: relative;
@@ -139,7 +188,7 @@ header .nav{
     
 }
 .card .imgbox img{
-    position: relative;
+    position: relat*ive;
     top: 0;
     left: 0;
     width: 100%;
