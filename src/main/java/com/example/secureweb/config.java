@@ -18,6 +18,7 @@ public class config implements WebMvcConfigurer {
         registry.addViewController("/reviews").setViewName("reviews");
         registry.addViewController("/search-form").setViewName("search-form");
         registry.addViewController("/offer-form").setViewName("offer-form");
+        registry.addViewController("/my-offers").setViewName("my-offers");
 
     }
 
