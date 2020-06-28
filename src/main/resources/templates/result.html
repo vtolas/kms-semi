@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Cargonaut - Results</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    header .nav{
+      background-color: white;
+      border-bottom: rgb(0, 90, 81) 3px solid;
+    }
+
+    #body {
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("https://cdn.pixabay.com/photo/2018/07/25/13/19/truck-3561413_1280.jpg");
+      background-position: center;
+      background-size: cover;
+      position: absolute;
+    }
+    .card img{
+      width: 100%;
+      height: 15vw;
+      object-fit: cover;
+    }
+
+    .result-container{
+      position: relative;
+      margin: 5% auto;
+      max-width: 500px;
+      max-height: 570px;
+      background: #fff;
+      overflow-x: hidden;
+      overflow-y: auto;
+      background: transparent;
+    }
+    /* width */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+    .card-footer{
+      position: relative;
+      padding: 0;
+
+    }
+    .card-footer a img{
+      width: 30px;
+      height: 30px;
+      object-fit: fill;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar bg-light ">
+      <a class="navbar-brand" href="/home">
+        <img src="https://i.ibb.co/WB64y94/Cargo-Logo.png" width="200" height="90" class="d-inline-block align-top" alt=""
+          loading="lazy">
+      </a>
+      <a class="profil-picture" href="/profil">
+        <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg" height="90" width="90" alt="">
+      </a>
+    </nav>
+  </header>
+
+  <div id="body">
+    <div class=" result-container">
+      <div class="card">
+        <div class="card-body" style="justify-content: space-between;">
+          <div class="row" style= "justify-content: space-between;">
+            <div class="col">
+              <b>From:</b>   <span id="fromText"></span>
+            </div>
+            <div class="col"></div>
+            <div class="col">
+            <b>To:</b>  <span id="toText"></span>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-between">
+            <div class="col">
+              <span id="dateText">14.09.2020</span>    
+            </div>
+            <div class="col"></div>
+            <div class="col">
+               <b>With:</b> <span id="withText"></span>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-between">
+            <div class="col">
+             <b>Package:</b>  <span id="weightText">25kg</span>
+            </div>
+            <div class="col">
+             <span id="dimensionsText">45x15x20</span> 
+            </div>
+            <div class="col">
+            <b>Price:</b>  <span id="priceText"></span>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="d-flex ">
+            <a id="driverPicture" href="/reviews">
+              <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg">
+            </a>
+            <small id="driverName">&emsp;Alex Mustermann</small>
+            <a class="ml-auto" href="#">
+              <img src="https://image.flaticon.com/icons/svg/892/892529.svg"  >
+            </a>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-body" style="justify-content: space-between;">
+          <div class="row" style= "justify-content: space-between;">
+            <div class="col">
+              From:
+            </div>
+            <div class="col"></div>
+            <div class="col">
+            To: 
+            </div>
+          </div>
+          <div class="row d-flex justify-content-between">
+            <div class="col">
+              14.09.2020
+            </div>
+            <div class="col"></div>
+            <div class="col">
+              With:
+            </div>
+          </div>
+          <div class="row d-flex justify-content-between">
+            <div class="col">
+              Package: <span>25kg</span>
+            </div>
+            <div class="col">
+              45x15x20
+            </div>
+            <div class="col">
+            Price:
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="d-flex ">
+            <a href="#">
+              <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg">
+            </a>
+            <small>&emsp;Johnathan Kerl</small>
+            <a class="ml-auto" href="#">
+              <img src="https://image.flaticon.com/icons/svg/892/892529.svg"  >
+            </a>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-body" style="justify-content: space-between;">
+          <div class="row" style= "justify-content: space-between;">
+            <div class="col">
+              From:
+            </div>
+            <div class="col"></div>
+            <div class="col">
+            To: 
+            </div>
+          </div>
+          <div class="row d-flex justify-content-between">
+            <div class="col">
+              14.09.2020
+            </div>
+            <div class="col"></div>
+            <div class="col">
+              With:
+            </div>
+          </div>
+          <div class="row d-flex justify-content-between">
+            <div class="col">
+              Package: <span>25kg</span>
+            </div>
+            <div class="col">
+              45x15x20
+            </div>
+            <div class="col">
+            Price:
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="d-flex ">
+            <a href="#">
+              <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg">
+            </a>
+            <small>&emsp;Johnathan Kerl</small>
+            <a class="ml-auto" href="#">
+              <img src="https://image.flaticon.com/icons/svg/892/892529.svg"  >
+            </a>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-body" style="justify-content: space-between;">
+          <div class="row" style= "justify-content: space-between;">
+            <div class="col">
+              From:
+            </div>
+            <div class="col"></div>
+            <div class="col">
+            To: 
+            </div>
+          </div>
+          <div class="row d-flex justify-content-between">
+            <div class="col">
+              14.09.2020
+            </div>
+            <div class="col"></div>
+            <div class="col">
+              With:
+            </div>
+          </div>
+          <div class="row d-flex justify-content-between">
+            <div class="col">
+              Package: <span>25kg</span>
+            </div>
+            <div class="col">
+              45x15x20
+            </div>
+            <div class="col">
+            Price:
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="d-flex ">
+            <a href="#">
+              <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg">
+            </a>
+            <small>&emsp;Johnathan Kerl</small>
+            <a class="ml-auto" href="#">
+              <img src="https://image.flaticon.com/icons/svg/892/892529.svg"  >
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+</body>
+
+</html>

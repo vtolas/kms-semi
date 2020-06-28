@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Cargonaut - Offer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        header .nav {
+            background-color: white;
+            border-bottom: rgb(0, 90, 81) 3px solid;
+        }
+
+        #body {
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://cdn.pixabay.com/photo/2018/07/25/13/19/truck-3561413_1280.jpg");
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+        }
+
+        .search-container {
+            position: relative;
+            margin: 5% auto;
+            padding: 1%;
+            max-width: 500px;
+            background: #fff;
+        }
+    </style>
+
+</head>
+
+<body>
+<header>
+    <nav class="navbar bg-light ">
+        <a class="navbar-brand" href="/home">
+            <img src="https://i.ibb.co/WB64y94/Cargo-Logo.png" width="200" height="90" class="d-inline-block align-top"
+                 alt=""
+                 loading="lazy">
+        </a>
+        <a class="profil-picture" href="/profil">
+            <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg" height="90" width="90" alt="">
+        </a>
+    </nav>
+</header>
+
+<div id="body">
+    <div class="search-container" style="border-radius: 30px;">
+        <h3 style="text-align: center;">Offer a ride</h3>
+    </div>
+    <div class=" search-container">
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputFrom">From</label>
+                    <input type="text" class="form-control" id="inputFrom">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputTo">To</label>
+                    <input type="text" class="form-control" id="inputTo">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputWhen">When</label>
+                    <input type="date" class="form-control" id="inputWhen" >
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputVehicule">Vehicule</label>
+                    <input type="text" class="form-control" id="inputVehicule" >
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="inputWeight">Weight (kg)</label>
+                    <input type="number" class="form-control" id="inputWeight">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="inputHeight">Height (cm)</label>
+                    <input type="number" class="form-control" id="inputHeight">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="inputWidth">Width (cm)</label>
+                    <input type="number" class="form-control" id="inputWidth">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="inputDepth">Depth (cm)</label>
+                    <input type="number" class="form-control" id="inputDepth">
+                </div>
+            </div>
+            <div class="form-row justify-content-end">
+                <button type="submit" class="btn btn-success ">Offer</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>
