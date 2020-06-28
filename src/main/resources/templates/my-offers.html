@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Cargonaut - My Offers</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        header .nav {
+            background-color: white;
+            border-bottom: rgb(0, 90, 81) 3px solid;
+        }
+
+        #body {
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://cdn.pixabay.com/photo/2015/11/07/11/08/truck-1030846_1280.jpg");
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+        }
+
+        .profil-container {
+            position: relative;
+            margin: 2% auto;
+            padding: 1%;
+            max-width: 700px;
+            background: #fff;
+        }
+
+        .result-container {
+            position: relative;
+            margin: 5% auto;
+            max-width: 500px;
+            max-height: 570px;
+            background: #fff;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background: transparent;
+        }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .card-footer {
+            position: relative;
+            padding: 0;
+
+        }
+
+        .card-footer a img {
+            width: 30px;
+            height: 30px;
+            object-fit: fill;
+        }
+    </style>
+
+</head>
+
+<body>
+<header>
+    <nav class="navbar bg-light ">
+        <a class="navbar-brand" href="/home">
+            <img src="https://i.ibb.co/WB64y94/Cargo-Logo.png" width="200" height="90" class="d-inline-block align-top"
+                 alt=""
+                 loading="lazy">
+        </a>
+        <a class="profil-picture" href="/profil">
+            <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg" height="90" width="90" alt="">
+        </a>
+    </nav>
+</header>
+
+<div id="body">
+    <div class="profil-container" style="border-radius: 30px;">
+        <h3 style="text-align: center;">My Offers</h3>
+    </div>
+    <div class=" profil-container">
+        <div class="row">
+            <div class="col-md-3 align-self-center align-content-lg-center">
+                <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg" width="90" height="90" alt="">
+            </div>
+            <div class="col">
+                <h5>johnathan.knobber@gmail.com</h5>
+                <h6>Driver</h6>
+            </div>
+            <div class="col-1">
+                <a href="/login?logout">
+                    <img src="https://image.flaticon.com/icons/svg/1828/1828427.svg" width="20" height="20" alt="">
+                </a>
+            </div>
+        </div>
+        <br>
+        <div class="result-container">
+            <div class="card">
+                <div class="card-body" style="justify-content: space-between;">
+                    <div class="row" style="justify-content: space-between;">
+                        <div class="col">
+                            From:
+                        </div>
+                        <div class="col"></div>
+                        <div class="col">
+                            To:
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-between">
+                        <div class="col">
+                            14.09.2020
+                        </div>
+                        <div class="col"></div>
+                        <div class="col">
+                            With:
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-between">
+                        <div class="col">
+                            Package: <span>25kg</span>
+                        </div>
+                        <div class="col">
+                            45x15x20
+                        </div>
+                        <div class="col">
+                            Price:
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex ">
+                        <a href="#">
+                            <img src="/assets/benutzer.png">
+                        </a>
+                        <small>&emsp;Johnathan Kerl</small>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

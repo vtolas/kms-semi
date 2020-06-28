@@ -10,3 +10,6 @@
 
 #### created by @BenSchokoRiegel, @AlaaElBouhdidi, @vtolas
 #### for university course: Konzepte Moderner Softwareentwicklung
+#### Run project
+- Open Terminal
+- type **./gradlew bootRun**
