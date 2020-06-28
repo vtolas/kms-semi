@@ -5,7 +5,116 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Cargonaut - Login </title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://file.io/5bveVxM3">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        header .nav{
+            background-color: white;
+            border-bottom: rgb(0, 90, 81) 3px solid;
+        }
+
+        #body {
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("https://cdn.pixabay.com/photo/2018/07/25/13/19/truck-3561413_1280.jpg");
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+        }
+        .form-box{
+            width: 380px;
+            height: 580px;
+            position: relative;
+            margin: 5% auto;
+            background: #fff;
+            padding: 0%;
+            overflow: hidden;
+        }
+        .button-box{
+            width: 220px;
+            margin: 35px auto;
+            position: relative;
+            box-shadow: 0 0 20px 9px rgb(0 , 90, 81);
+            border-radius: 30px;
+        }
+        .toggle-btn{
+            padding: 10px 30px;
+            cursor: pointer;
+            background: transparent;
+            border: 0;
+            outline: none;
+            position: relative;
+        }
+        #btn{
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 110px;
+            height: 100%;
+            background: linear-gradient(to right, rgb(0, 90, 81), rgb(154, 253, 199));
+            border-radius: 30px;
+            transition: .5s;
+        }
+        .input-group{
+            top: 180px;
+            position: absolute;
+            width: 280px;
+            transition: .5s;
+        }
+        .input-field{
+            width: 100%;
+            padding: 10px 0;
+            margin: 5px 0;
+            border-left: 0;
+            border-top: 0;
+            border-right: 0;
+            border-bottom: 1px solid #999;
+            outline: none;
+            background: transparent;
+        }
+        .submit-btn{
+            width: 85%;
+            padding: 10px 30px;
+            cursor: pointer;
+            display: block;
+            margin: auto;
+            background: linear-gradient(to right,  rgb(0, 90, 81), rgb(154, 253, 199));;
+            border: 0;
+            outline: none;
+            border-radius: 30px;
+        }
+        #login{
+            left: 50px;
+        }
+        #register{
+            left: 450px
+        }
+        .alert {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .closebtn:hover {
+            color: black;
+        }
+    </style>
 
 </head>
 
@@ -13,7 +122,7 @@
 <header>
     <nav class="navbar navbar-light ">
         <a class="navbar-brand" >
-            <img src="assets/Cargo-Logo.PNG" width="200" height="90" class="d-inline-block align-top" alt=""
+            <img src="https://i.ibb.co/WB64y94/Cargo-Logo.png" width="200" height="90" class="d-inline-block align-top" alt=""
                  loading="lazy">
         </a>
     </nav>

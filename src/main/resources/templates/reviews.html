@@ -11,24 +11,90 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"></script>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    header .nav{
+      background-color: white;
+      border-bottom: rgb(0, 90, 81) 3px solid;
+    }
+
+    #body {
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("https://cdn.pixabay.com/photo/2018/07/25/13/19/truck-3561413_1280.jpg");
+      background-position: center;
+      background-size: cover;
+      position: absolute;
+    }
+    .review-container{
+      position: relative;
+      margin: 5% auto;
+      max-width: 500px;
+      max-height: 370px;
+      background: #fff;
+      overflow-x: hidden;
+      overflow-y: auto;
+      background: transparent;
+    }
+
+    #reviewed-profile{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* width */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+    .card-footer{
+      position: relative;
+      padding: 0;
+
+    }
+    .card-footer a img{
+      width: 30px;
+      height: 30px;
+      object-fit: fill;
+    }
+  </style>
 </head>
 
 <body>
   <header>
     <nav class="navbar bg-light ">
-      <a class="navbar-brand" href="#">
-        <img src="assets/Cargo-Logo.PNG" width="200" height="90" class="d-inline-block align-top" alt=""
+      <a class="navbar-brand" href="/home">
+        <img src="https://i.ibb.co/WB64y94/Cargo-Logo.png" width="200" height="90" class="d-inline-block align-top" alt=""
           loading="lazy">
       </a>
-      <a class="profil-picture" href="profil.html">
-        <img src="assets/benutzer.png" height="90" width="90" alt="">
+      <a class="profil-picture" href="/profil">
+        <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg" height="90" width="90" alt="">
       </a>
     </nav>
   </header>
 
   <div id="body">
     <div class="review-container  bg-light" style="padding-top: 1%;">
-      <img id="reviewed-profile" src="assets/benutzer.png" height="90" width="90" alt="">
+      <img id="reviewed-profile" src="https://image.flaticon.com/icons/svg/2948/2948035.svg" height="90" width="90" alt="">
       <h6 id="reviewed-name" style="text-align: center;">Alex Mustermann</h6>
     </div>
     <div class=" review-container">
@@ -39,7 +105,7 @@
         <div class="card-footer">
           <div class="d-flex ">
             <a id="driverPicture" href="#">
-              <img src="assets/benutzer.png">
+              <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg">
             </a>
             <small id="driverName">&emsp;Johnathan Kerl</small>
             
@@ -54,7 +120,7 @@
         <div class="card-footer">
           <div class="d-flex ">
             <a id="driverPicture" href="#">
-              <img src="assets/benutzer.png">
+              <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg">
             </a>
             <small id="driverName">&emsp;Johnathan Kerl</small>
             
@@ -69,7 +135,7 @@
         <div class="card-footer">
           <div class="d-flex ">
             <a id="driverPicture" href="#">
-              <img src="assets/benutzer.png">
+              <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg">
             </a>
             <small id="driverName">&emsp;Johnathan Kerl</small>
             
@@ -84,7 +150,7 @@
         <div class="card-footer">
           <div class="d-flex ">
             <a id="driverPicture" href="#">
-              <img src="assets/benutzer.png">
+              <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg">
             </a>
             <small id="driverName">&emsp;Johnathan Kerl</small>
             
