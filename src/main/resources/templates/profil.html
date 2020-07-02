@@ -63,7 +63,12 @@
           <h5>johnathan.knobber@gmail.com</h5>
           <h6>Driver</h6>
         </div>
-        <div class="col-1">
+        <div class="col">
+          <form th:action="@{/my-offers}" method="post">
+            <input type="submit" value="Offers Manager" />
+          </form>
+        </div>
+        <div class="col">
           <form th:action="@{/logout}" method="post">
             <input type="submit" value="Log out" />
           </form>
