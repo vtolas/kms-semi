@@ -5,7 +5,9 @@ import com.example.secureweb.entity.FahrAngebot;
 import com.example.secureweb.entity.User;
 import com.example.secureweb.service.FahrAngebotService;
 import com.example.secureweb.service.UserService;
+import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cglib.core.CollectionUtils;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -15,7 +17,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 @Controller
 public class FahrAngebotController {
@@ -60,8 +64,22 @@ public class FahrAngebotController {
         }
 
         List<FahrAngebot> list = service.getFahrAngebote();
+        List<FahrAngebot> result = new ArrayList<FahrAngebot>();
 
-        model.addAttribute("fahrangebote", list);
+        String email = user.getEmail();
+
+        for (FahrAngebot fa: list) {
+            if(email == null){
+                break;
+            }
+            if (fa.getUser().contains(email) ) {
+                result.add(fa);
+            }
+        }
+
+
+        //CollectionUtils.filter(list, fa -> ((FahrAngebot) fa).getUser() == email);
+        model.addAttribute("fahrangebote", result);
         model.addAttribute("user", user);
 
         return "my-offers";
