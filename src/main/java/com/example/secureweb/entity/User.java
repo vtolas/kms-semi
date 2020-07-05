@@ -1,64 +1,128 @@
 package com.example.secureweb.entity;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.util.Date;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+
+
+@Entity
+@Table(name = "auth_user")
 public class User {
 
-    String  username;
-    private String passwort;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "auth_user_id")
+	private int id;
+
+	@NotNull(message="First name is compulsory")
+	@Column(name = "first_name")
+	private String name;
+
+	@NotNull(message="Last name is compulsory")
+	@Column(name = "last_name")
+	private String lastName;
+
+	@NotNull(message="Email is compulsory")
+	@Email(message = "Email is invalid")
+	@Column(name = "email")
+	private String email;
+
+	@NotNull(message="Password is compulsory")
+	@Column(name = "password")
+	private String password;
 
 
-    String  vorname;
-    String nachname;
-    Date geburtsdatum;
-    String straße;
-    int hausnummer;
-    String Stadt;
-    int plz;
-    String telefon;
+	@Column(name = "status")
+	private String status;
 
+	@Column(name = "tel")
+	private String tel;
 
-    public User(String username,String passwort,String vorname, String nachname, Date geburtsdatum, String straße, int hausnummer, String stadt, int plz, String telefon) {
-        this.username = username;
-        this.passwort = passwort;
-        this.vorname = vorname;
-        this.nachname = nachname;
-        this.geburtsdatum = geburtsdatum;
-        this.straße = straße;
-        this.hausnummer = hausnummer;
-        Stadt = stadt;
-        this.plz = plz;
-        this.telefon = telefon;
-    }
+	@Column(name = "bday")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date bday;
 
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "auth_user_role", joinColumns = @JoinColumn(name = "auth_user_id"), inverseJoinColumns = @JoinColumn(name = "auth_role_id"))
+	private Set<Role> roles;
 
+	public int getId() {
+		return id;
+	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
 
-}
+	public String getName() {
+		return name;
+	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
 
-class Fahrer extends User {
+	public String getLastName() {
+		return lastName;
+	}
 
-    Fahrzeug fahrzeug;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
+	public String getEmail() {
+		return email;
+	}
 
-    public Fahrer(String username, String passwort, String vorname, String nachname, Date geburtsdatum, String straße, int hausnummer, String stadt, int plz, String telefon,Fahrzeug fahrzeug) {
-        super(username, passwort, vorname, nachname, geburtsdatum, straße, hausnummer, stadt, plz, telefon);
-        this.fahrzeug = fahrzeug;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
+	public String getPassword() {
+		return password;
+	}
 
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
+	public String getStatus() {
+		return status;
+	}
 
-}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
+	public Set<Role> getRoles() {
+		return roles;
+	}
 
-class Nutzer extends User {
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
+	}
 
-    public Nutzer(String username, String passwort, String vorname, String nachname, Date geburtsdatum, String straße, int hausnummer, String stadt, int plz, String telefon) {
-        super(username, passwort, vorname, nachname, geburtsdatum, straße, hausnummer, stadt, plz, telefon);
-    }
+	public String getTel() { return tel; }
+
+	public void setTel(String tel) { this.tel = tel; }
+
+	public Date getBday() { return bday; }
+
+	public void setBday(Date bday) { this.bday = bday; }
+
 
 }

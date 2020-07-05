@@ -19,7 +19,7 @@ header nav{
 }
 .form-box{ 
     width: 380px;
-    height: 580px;
+    height: auto;
     position: relative;
     margin: 5% auto;
     background: #fff;
