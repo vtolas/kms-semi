@@ -68,4 +68,12 @@ public class FahrAngebotController {
     public String delete(@PathVariable int id){
         return service.deleteFahrAngebot(id);
     }
+
+    @GetMapping("/result")
+    public List<FahrAngebot> showresults(FahrAngebot angebot){
+        List<FahrAngebot> list = service.findresult(angebot.getDatum(),angebot.getStartOrt(),angebot.getZielOrt());
+        System.out.println(list);
+        return list;
+    }
+
 }

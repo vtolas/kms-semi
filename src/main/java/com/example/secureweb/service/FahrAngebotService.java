@@ -5,6 +5,7 @@ import com.example.secureweb.repository.FahrAngebotRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -28,5 +29,8 @@ public class FahrAngebotService {
     public String deleteFahrAngebot(int id){
         repo.deleteById(id);
         return "removed, id:" + id ;
+    }
+    public List<FahrAngebot> findresult(Date datum, String startOrt, String zielOrt){
+        return repo.findByDatumAfterAndStartOrtAndZielOrt(datum,startOrt,zielOrt);
     }
 }

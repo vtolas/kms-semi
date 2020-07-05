@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
   <meta charset="utf-8">
@@ -58,42 +58,56 @@
       <h3 style="text-align: center;">Find a ride</h3>
     </div>
     <div class=" search-container">
-      <form action="/result">
+      <form th:action="@{/result}" method="GET">
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputFrom">From</label>
-            <input type="text" class="form-control" id="inputFrom">
+            <input type="text" class="form-control" id="inputFrom" name="startOrt" required>
           </div>
           <div class="form-group col-md-6">
             <label for="inputTo">To</label>
-            <input type="text" class="form-control" id="inputTo">
+            <input type="text" class="form-control" id="inputTo" name="zielOrt" required>
           </div>
         </div>
-        <div class="form-group">
-          <label for="inputWhen">When</label>
-          <input type="date" class="form-control" id="inputWhen">
+        <div class="form-row">
+          <div class="form-group col-md-5">
+            <label for="inputWhen">When</label>
+            <input type="date" class="form-control" id="inputWhen" name="datum" required>
+          </div>
+          <div class="form-group col-md-5">
+            <label for="inputVehicule">Vehicle</label>
+            <input type="text" class="form-control" id="inputVehicule" name="fahrzeugId">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputSeat">N° Seats</label>
+            <input type="number" min="0" class="form-control" id="inputSeat" name="ladePlatz">
+          </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-3">
             <label for="inputWeight">Weight (kg)</label>
-            <input type="number" class="form-control" id="inputWeight">
+            <input type="number" min="1" step="0.01" pattern="[0-9]+([\.,][0-9]+)?" class="form-control" id="inputWeight" name="weight">
           </div>
-          <div class="form-group col-md-3">
+          <div class="form-group col-md-2">
             <label for="inputHeight">Height (cm)</label>
-            <input type="number" class="form-control" id="inputHeight">
+            <input type="number" min="1" step="0.01" pattern="[0-9]+([\.,][0-9]+)?" class="form-control" id="inputHeight" name="height">
           </div>
-          <div class="form-group col-md-3">
+          <div class="form-group col-md-2">
             <label for="inputWidth">Width (cm)</label>
-            <input type="number" class="form-control" id="inputWidth">
+            <input type="number" min="1" step="0.01" pattern="[0-9]+([\.,][0-9]+)?" class="form-control" id="inputWidth" name="width">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputDepth">Depth (cm)</label>
+            <input type="number" min="1" step="0.01"  pattern="[0-9]+([\.,][0-9]+)?" class="form-control" id="inputDepth" name="depth">
           </div>
           <div class="form-group col-md-3">
-            <label for="inputDepth">Depth (cm)</label>
-            <input type="number" class="form-control" id="inputDepth">
+            <label for="inputPrice">Price (€)</label>
+            <input type="number" min="0" step="0.01" pattern="[0-9]+([\.,][0-9]+)?" class="form-control" id="inputPrice" name="price">
           </div>
         </div>
         <div class="form-row justify-content-end">
-          <button type="submit" class="btn btn-success ">Search</button></div>
-      </form>
+          <button type="submit" class="btn btn-success ">Search</button>
+        </div>
     </div>
   </div>
 </body>
