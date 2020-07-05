@@ -1,3 +1,4 @@
+/*
 package com.example.secureweb.entity;
 
 import lombok.AllArgsConstructor;
@@ -133,4 +134,4 @@ class Packet {
     int ID;
     double gewichtKilo;
 
-}
+}*/
