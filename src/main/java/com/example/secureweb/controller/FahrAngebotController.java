@@ -70,9 +70,11 @@ public class FahrAngebotController {
     }
 
     @GetMapping("/result")
-    public List<FahrAngebot> showresults(FahrAngebot angebot){
+    public List<FahrAngebot> showresults(FahrAngebot angebot, RedirectAttributes redir){
         List<FahrAngebot> list = service.findresult(angebot.getDatum(),angebot.getStartOrt(),angebot.getZielOrt());
         System.out.println(list);
+        RedirectView rediview = new RedirectView("/result",true);
+        redir.addAttribute("results",list);
         return list;
     }
 

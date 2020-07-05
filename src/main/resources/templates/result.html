@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
   <meta charset="utf-8">
@@ -96,185 +96,40 @@
       <h3 style="text-align: center;">Results:</h3>
     </div>
     <div class=" result-container">
-      <div class="card">
+      <div class="card" th:each="result:${results}">
         <div class="card-body" style="justify-content: space-between;">
           <div class="row" style= "justify-content: space-between;">
             <div class="col">
-              <b>From:</b>   <span id="fromText"></span>
+              <b>From:</b>   <span th:utext="${result.startOrt}"></span>
             </div>
             <div class="col"></div>
             <div class="col">
-            <b>To:</b>  <span id="toText"></span>
+            <b>To:</b>  <span th:utext="${result.zielOrt}"></span>
             </div>
           </div>
           <div class="row d-flex justify-content-between">
             <div class="col">
-              <span id="dateText">14.09.2020</span>    
+              <span th:utext="${#dates.format(result.datum, 'dd.MM.yyyy')}"></span>
             </div>
             <div class="col"></div>
             <div class="col">
-               <b>With:</b> <span id="withText"></span>
+               <b>With:</b> <span th:utext="${result.fahrzeugId}"></span>
             </div>
           </div>
           <div class="row d-flex justify-content-between">
             <div class="col">
-             <b>Package:</b>  <span id="weightText">25kg</span>
+             <b>Package:</b>  <span th:utext="${result.weight}"></span> kg
             </div>
             <div class="col">
-             <span id="dimensionsText">45x15x20</span> 
+             <span th:utext="${result.height}"></span>x<span th:utext="${result.width}" ></span>x<span th:utext="${result.depth}" ></span>
             </div>
             <div class="col">
-            <b>Price:</b>  <span id="priceText"></span>
+            <b>Price:</b>  <span th:utext="${result.price}" ></span> €
             </div>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="d-flex ">
-            <a id="driverPicture" href="/reviews">
-              <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg">
-            </a>
-            <small id="driverName">&emsp;Alex Mustermann</small>
-            <a class="ml-auto" href="#">
-              <img src="https://image.flaticon.com/icons/svg/892/892529.svg"  >
-            </a>
           </div>
         </div>
       </div>
       <br>
-      <div class="card">
-        <div class="card-body" style="justify-content: space-between;">
-          <div class="row" style= "justify-content: space-between;">
-            <div class="col">
-              From:
-            </div>
-            <div class="col"></div>
-            <div class="col">
-            To: 
-            </div>
-          </div>
-          <div class="row d-flex justify-content-between">
-            <div class="col">
-              14.09.2020
-            </div>
-            <div class="col"></div>
-            <div class="col">
-              With:
-            </div>
-          </div>
-          <div class="row d-flex justify-content-between">
-            <div class="col">
-              Package: <span>25kg</span>
-            </div>
-            <div class="col">
-              45x15x20
-            </div>
-            <div class="col">
-            Price:
-            </div>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="d-flex ">
-            <a href="#">
-              <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg">
-            </a>
-            <small>&emsp;Johnathan Kerl</small>
-            <a class="ml-auto" href="#">
-              <img src="https://image.flaticon.com/icons/svg/892/892529.svg"  >
-            </a>
-          </div>
-        </div>
-      </div>
-      <br>
-      <div class="card">
-        <div class="card-body" style="justify-content: space-between;">
-          <div class="row" style= "justify-content: space-between;">
-            <div class="col">
-              From:
-            </div>
-            <div class="col"></div>
-            <div class="col">
-            To: 
-            </div>
-          </div>
-          <div class="row d-flex justify-content-between">
-            <div class="col">
-              14.09.2020
-            </div>
-            <div class="col"></div>
-            <div class="col">
-              With:
-            </div>
-          </div>
-          <div class="row d-flex justify-content-between">
-            <div class="col">
-              Package: <span>25kg</span>
-            </div>
-            <div class="col">
-              45x15x20
-            </div>
-            <div class="col">
-            Price:
-            </div>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="d-flex ">
-            <a href="#">
-              <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg">
-            </a>
-            <small>&emsp;Johnathan Kerl</small>
-            <a class="ml-auto" href="#">
-              <img src="https://image.flaticon.com/icons/svg/892/892529.svg"  >
-            </a>
-          </div>
-        </div>
-      </div>
-      <br>
-      <div class="card">
-        <div class="card-body" style="justify-content: space-between;">
-          <div class="row" style= "justify-content: space-between;">
-            <div class="col">
-              From:
-            </div>
-            <div class="col"></div>
-            <div class="col">
-            To: 
-            </div>
-          </div>
-          <div class="row d-flex justify-content-between">
-            <div class="col">
-              14.09.2020
-            </div>
-            <div class="col"></div>
-            <div class="col">
-              With:
-            </div>
-          </div>
-          <div class="row d-flex justify-content-between">
-            <div class="col">
-              Package: <span>25kg</span>
-            </div>
-            <div class="col">
-              45x15x20
-            </div>
-            <div class="col">
-            Price:
-            </div>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="d-flex ">
-            <a href="#">
-              <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg">
-            </a>
-            <small>&emsp;Johnathan Kerl</small>
-            <a class="ml-auto" href="#">
-              <img src="https://image.flaticon.com/icons/svg/892/892529.svg"  >
-            </a>
-          </div>
-        </div>
-      </div>
     </div>
     
   </div>
