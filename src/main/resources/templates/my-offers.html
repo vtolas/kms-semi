@@ -107,8 +107,8 @@
                 <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg" width="90" height="90" alt="">
             </div>
             <div class="col">
-                <h5>johnathan.knobber@gmail.com</h5>
-                <h6>Driver</h6>
+                <h4 th:utext="${user.email}" ></h4>
+                <h4 th:utext="${user.name} ${user.lastName}" ></h4>
             </div>
             <div class="col-1">
                 <a href="/login?logout">

@@ -2,7 +2,9 @@ package com.example.secureweb.controller;
 
 
 import com.example.secureweb.entity.FahrAngebot;
+import com.example.secureweb.entity.User;
 import com.example.secureweb.service.FahrAngebotService;
+import com.example.secureweb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -20,6 +22,10 @@ public class FahrAngebotController {
 
     @Autowired
     private FahrAngebotService service;
+
+    @Autowired
+    private UserService userService;
+
 
     @PostMapping("/addFahrangebot")
     public RedirectView addFA(FahrAngebot fa, RedirectAttributes redir){
@@ -46,15 +52,17 @@ public class FahrAngebotController {
 
     @GetMapping("/my-offers")
     public String findAllFahrangebote(Model model){
+        User user = new User();
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (!(authentication instanceof AnonymousAuthenticationToken)) {
             String currentUserName = authentication.getName();
-            System.out.println("User is: "+currentUserName);
+            user = userService.findByEmail(currentUserName);
         }
 
         List<FahrAngebot> list = service.getFahrAngebote();
 
         model.addAttribute("fahrangebote", list);
+        model.addAttribute("user", user);
 
         return "my-offers";
     }
