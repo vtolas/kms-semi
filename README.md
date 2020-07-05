@@ -1,5 +1,5 @@
 ## MyCargonaut Project  
-### ***MyCargonaut Project is a web portal for public- and ware trasport services***  
+### ***MyCargonaut Project is a web portal for public- and ware transport services***  
 ### Featuring
 - account registration for Users (Cargonauts)
 - profile personalisation
@@ -10,6 +10,9 @@
 
 #### created by @BenSchokoRiegel, @AlaaElBouhdidi, @vtolas
 #### for university course: Konzepte Moderner Softwareentwicklung
+#### Project prerequisites
+- external database server : mysql / mariaDB 
+- IDE : IntelliJ IDEA 
 #### Run project
 - Open Terminal
 - type **./gradlew bootRun**
