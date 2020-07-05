@@ -12,14 +12,14 @@ header nav{
 #body {
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("https://cdn.pixabay.com/photo/2015/11/07/11/08/truck-1030846_1280.jpg");
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("assets/long-road.jpg");
     background-position: center;
     background-size: cover;
     position: absolute;
 }
 .form-box{ 
     width: 380px;
-    height: 580px;
+    height: auto;
     position: relative;
     margin: 5% auto;
     background: #fff;
@@ -104,6 +104,9 @@ header nav{
     overflow-y: auto;
     background: transparent;
 }
+.result-container .card{
+    padding: 5px;
+}
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -163,5 +166,17 @@ header nav{
     margin: 2% auto;
     padding: 1%;
     max-width: 700px;
+    max-height: 700px;
     background: #fff;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
 }

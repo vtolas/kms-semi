@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="utf-8">
@@ -23,7 +23,7 @@
         #body {
             height: 100%;
             width: 100%;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://cdn.pixabay.com/photo/2015/11/07/11/08/truck-1030846_1280.jpg");
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("assets/long-road.jpg");
             background-position: center;
             background-size: cover;
             position: absolute;
@@ -107,8 +107,8 @@
                 <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg" width="90" height="90" alt="">
             </div>
             <div class="col">
-                <h5>johnathan.knobber@gmail.com</h5>
-                <h6>Driver</h6>
+                <h4 th:utext="${user.email}" ></h4>
+                <h4 th:utext="${user.name} ${user.lastName}" ></h4>
             </div>
             <div class="col-1">
                 <a href="/login?logout">
@@ -118,48 +118,50 @@
         </div>
         <br>
         <div class="result-container">
-            <div class="card">
-                <div class="card-body" style="justify-content: space-between;">
+            <div class="card" th:each="fahrangebot:${fahrangebote}">
+                <div class="card-body"  style="justify-content: space-between;">
                     <div class="row" style="justify-content: space-between;">
-                        <div class="col">
-                            From:
+                        <div class="col" >
+                            From: <span th:utext="${fahrangebot.startOrt}" ></span>
                         </div>
                         <div class="col"></div>
                         <div class="col">
-                            To:
+                            To: <span th:utext="${fahrangebot.zielOrt}" ></span>
                         </div>
                     </div>
                     <div class="row d-flex justify-content-between">
                         <div class="col">
-                            14.09.2020
+                            <span th:utext="${#dates.format(fahrangebot.datum, 'dd.MM.yyyy')}" ></span>
                         </div>
                         <div class="col"></div>
                         <div class="col">
-                            With:
+                            With: <span th:utext="${fahrangebot.fahrzeugId}" ></span>
                         </div>
                     </div>
                     <div class="row d-flex justify-content-between">
                         <div class="col">
-                            Package: <span>25kg</span>
+                            Package: <span th:utext="${fahrangebot.weight}" > </span> kg
                         </div>
                         <div class="col">
-                            45x15x20
+                            <span th:utext="${fahrangebot.height}" ></span>x<span th:utext="${fahrangebot.width}" ></span>x<span th:utext="${fahrangebot.depth}" ></span>
                         </div>
                         <div class="col">
-                            Price:
+                            Price: <span th:utext="${fahrangebot.price}" > </span> €
                         </div>
                     </div>
                 </div>
                 <div class="card-footer">
                     <div class="d-flex ">
                         <a href="#">
-                            <img src="/assets/benutzer.png">
+                            <img src="/assets/bearbeiten.png">
                         </a>
-                        <small>&emsp;Johnathan Kerl</small>
+                        <a class="ml-auto" href="#">
+                            <img src="assets/muell.png"  >
+                        </a>
                     </div>
                 </div>
             </div>
-            <br>
+
         </div>
     </div>
 </div>
