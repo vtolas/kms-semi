@@ -23,6 +23,9 @@ public class ReviewService {
     public List<Review> getReviews(){
         return repo.findAll();
     }
+    public List<Review> getReviewsByReviewedUser(int id){
+        return repo.findByReviewedUserIs(id);
+    }
     public Review getReviewById(int id){
         return repo.findById(id).orElse(null);
     }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
   <meta charset="utf-8">
@@ -98,64 +98,20 @@
   </div>
     <div class="review-container  bg-light" style="padding-top: 1%;">
       <img id="reviewed-profile" src="https://image.flaticon.com/icons/svg/2948/2948035.svg" height="90" width="90" alt="">
-      <h6 id="reviewed-name" style="text-align: center;">Alex Mustermann</h6>
+      <h6 id="reviewed-name" style="text-align: center;" th:utext="${userFullName}" ></h6>
+      <a th:href="@{/add-review(id=${user})}" ><h1 style="text-align: center;">+</h1></a>
     </div>
-    <div class=" review-container">
-      <div class="card">
+    <div class=" review-container" >
+      <div class="card" style="margin: 1%;" th:each="review:${reviews}">
         <div class="card-body" style="justify-content: space-between;">
-          <p>jfdjdjdjddijfdjdjdjddijfdjdjdjddijfdj d ddd  d d d dkdkdkd  adjdjdj jfdjdjdjddi    jfdjdjdjddi ghhhn jfdjdjdjddidjdjddijfdjdjdjddi</p>
+         <p th:utext="${review.text}" ></p>
         </div>
         <div class="card-footer">
           <div class="d-flex ">
-            <a id="driverPicture" href="#">
+            <a  href="#">
               <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg">
             </a>
-            <small id="driverName">&emsp;Johnathan Kerl</small>
-            
-          </div>
-        </div>
-      </div>
-      <br>
-      <div class="card">
-        <div class="card-body" style="justify-content: space-between;">
-          <p>jfdjdjdjddijfdjdjdjddijfdjdjdjddijfdj d ddd  d d d dkdkdkd  adjdjdj jfdjdjdjddi    jfdjdjdjddi ghhhn jfdjdjdjddidjdjddijfdjdjdjddi</p>
-        </div>
-        <div class="card-footer">
-          <div class="d-flex ">
-            <a id="driverPicture" href="#">
-              <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg">
-            </a>
-            <small id="driverName">&emsp;Johnathan Kerl</small>
-            
-          </div>
-        </div>
-      </div>
-      <br>
-      <div class="card">
-        <div class="card-body" style="justify-content: space-between;">
-          <p>jfdjdjdjddijfdjdjdjddijfdjdjdjddijfdj d ddd  d d d dkdkdkd  adjdjdj jfdjdjdjddi    jfdjdjdjddi ghhhn jfdjdjdjddidjdjddijfdjdjdjddi</p>
-        </div>
-        <div class="card-footer">
-          <div class="d-flex ">
-            <a id="driverPicture" href="#">
-              <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg">
-            </a>
-            <small id="driverName">&emsp;Johnathan Kerl</small>
-            
-          </div>
-        </div>
-      </div>
-      <br>
-      <div class="card">
-        <div class="card-body" style="justify-content: space-between;">
-          <p>jfdjdjdjddijfdjdjdjddijfdjdjdjddijfdj d ddd  d d d dkdkdkd  adjdjdj jfdjdjdjddi    jfdjdjdjddi ghhhn jfdjdjdjddidjdjddijfdjdjdjddi</p>
-        </div>
-        <div class="card-footer">
-          <div class="d-flex ">
-            <a id="driverPicture" href="#">
-              <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg">
-            </a>
-            <small id="driverName">&emsp;Johnathan Kerl</small>
+            <small th:utext="${review.authorFullName}" >&emsp;</small>
             
           </div>
         </div>

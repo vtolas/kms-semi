@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table(name = "reviews")
 public class Review {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     @Column(name = "id")
     private int id;
 
@@ -19,10 +19,20 @@ public class Review {
     private String text;
 
     @Column(name = "author")
-    private String author;
+    private int author;
 
     @Column(name = "user_email")
-    private String userEmail;
+    private int reviewedUser;
+
+    public String getAuthorFullName() {
+        return authorFullName;
+    }
+
+    public void setAuthorFullName(String authorFullName) {
+        this.authorFullName = authorFullName;
+    }
+
+    private String authorFullName;
 
     public int getId() {
         return id;
@@ -38,20 +48,20 @@ public class Review {
         this.text = text;
     }
 
-    public String getAuthor() {
+    public int getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(int author) {
         this.author = author;
     }
 
-    public String getUserEmail() {
-        return userEmail;
+    public int getReviewedUser() {
+        return reviewedUser;
     }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
+    public void setReviewedUser(int userEmail) {
+        this.reviewedUser = userEmail;
     }
 
 

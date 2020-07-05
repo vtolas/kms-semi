@@ -69,11 +69,10 @@ public class FahrAngebotController {
         String email = user.getEmail();
 
         for (FahrAngebot fa: list) {
-            if(email == null){
-                break;
-            }
-            if (fa.getUser().contains(email) ) {
-                result.add(fa);
+            if(email != null) {
+                if (fa.getUser().contains(email)) {
+                    result.add(fa);
+                }
             }
         }
 

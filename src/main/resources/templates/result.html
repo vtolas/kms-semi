@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
   <meta charset="utf-8">
@@ -130,7 +130,7 @@
         </div>
         <div class="card-footer">
           <div class="d-flex ">
-            <a id="driverPicture" href="/reviews">
+            <a id="driverPicture" th:href="@{/reviews(id='2')}">
               <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg">
             </a>
             <small id="driverName">&emsp;Alex Mustermann</small>
