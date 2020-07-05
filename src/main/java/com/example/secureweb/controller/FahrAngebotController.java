@@ -46,6 +46,11 @@ public class FahrAngebotController {
 
     @GetMapping("/my-offers")
     public String findAllFahrangebote(Model model){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (!(authentication instanceof AnonymousAuthenticationToken)) {
+            String currentUserName = authentication.getName();
+            System.out.println("User is: "+currentUserName);
+        }
 
         List<FahrAngebot> list = service.getFahrAngebote();
 
