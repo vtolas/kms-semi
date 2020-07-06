@@ -30,7 +30,7 @@ public class FahrAngebotService {
         repo.deleteById(id);
         return "removed, id:" + id ;
     }
-    public List<FahrAngebot> findResults(String startOrt, String zielOrt, Date datum){
-        return repo.findByStartOrtIsLikeOrZielOrtIsLikeOrDatumAfter(startOrt,  zielOrt,  datum);
+    public List<FahrAngebot> findresult(Date datum, String startOrt, String zielOrt){
+        return repo.findByDatumAfterAndStartOrtAndZielOrt(datum,startOrt,zielOrt);
     }
 }
