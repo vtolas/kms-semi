@@ -20,28 +20,29 @@ import java.util.Date;
 public class FahrAngebot {
     @Id
     @GeneratedValue
-    private int id;
+    private Integer id;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date datum;
-    private int ladePlatz;
+    private Integer ladePlatz;
     private String startOrt;
     private String zielOrt;
     private String status;
-    private double weight;
-    private double height;
-    private double width;
-    private double depth;
+    private Double weight;
+    private Double height;
+    private Double width;
+    private Double depth;
     private String fahrzeugId;
+    private Double price;
 
-    public double getPrice() {
+
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
-    private double price;
 
     public void setUser(String user) {
         this.user = user;
@@ -76,4 +77,25 @@ public class FahrAngebot {
     }
 
     private String user;
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    private Integer userId;
+
+    public String getUserFullName() {
+        return userFullName;
+    }
+
+    public void setUserFullName(String userFullName) {
+        this.userFullName = userFullName;
+    }
+
+    private String userFullName;
+
 }

@@ -2,6 +2,7 @@ package com.example.secureweb.controller;
 
 
 import com.example.secureweb.entity.FahrAngebot;
+import com.example.secureweb.entity.Review;
 import com.example.secureweb.entity.User;
 import com.example.secureweb.service.FahrAngebotService;
 import com.example.secureweb.service.UserService;
@@ -87,6 +88,21 @@ public class FahrAngebotController {
     @GetMapping("/fahrangebot/{id}")
     public FahrAngebot findAllFahrangebotById(@PathVariable int id){
         return service.getFahrAngebotById(id);
+    }
+
+    @GetMapping("/result")
+    public List<FahrAngebot> showresults(FahrAngebot angebot, Model model){
+
+        List<FahrAngebot> list = service.findResults(angebot.getStartOrt(), angebot.getZielOrt(), angebot.getDatum());
+        for (FahrAngebot r: list) {
+            User u = new User();
+            u = userService.findByEmail(r.getUser());
+            r.setUserFullName(u.getName() + " "+ u.getLastName() );
+            r.setUserId(u.getId());
+        }
+
+        model.addAttribute("results", list);
+        return list;
     }
 
     @DeleteMapping("/delete")

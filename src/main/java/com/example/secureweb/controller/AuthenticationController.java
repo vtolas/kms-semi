@@ -3,11 +3,13 @@ package com.example.secureweb.controller;
 
 import com.example.secureweb.entity.User;
 import com.example.secureweb.service.UserService;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +25,18 @@ public class AuthenticationController {
 
 	@Autowired
 	UserService userService;
+
+	@RequestMapping(value = { "/profil" }, method = RequestMethod.GET)
+	public void profile(Model model) {
+		User u = new User();
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if (!(authentication instanceof AnonymousAuthenticationToken)) {
+			String currentUserName = authentication.getName();
+			u = userService.findByEmail(currentUserName);
+		}
+
+		model.addAttribute("user", u);
+	}
 
 	@RequestMapping(value = { "/login" }, method = RequestMethod.GET)
 	public ModelAndView login() {
@@ -48,7 +62,6 @@ public class AuthenticationController {
 		if (!(authentication instanceof AnonymousAuthenticationToken)) {
 			String currentUserName = authentication.getName();
 			User u = userService.findByEmail(currentUserName);
-			System.out.println("User is: "+u.getLastName());
 		}
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("home"); // resources/template/home.html

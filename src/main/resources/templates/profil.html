@@ -59,19 +59,18 @@
         <div class="col-md-3 align-self-center align-content-lg-center">
           <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg" width="90" height="90" alt="">
         </div>
-        <div class="col">
-          <h5>johnathan.knobber@gmail.com</h5>
-          <h6>Driver</h6>
+        <div class="col-5">
+          <h5 th:utext="${user.email}" ></h5>
         </div>
-        <div class="col">
-          <form th:action="@{/my-offers}" method="get">
-            <input type="submit" value="Offers Manager" />
-          </form>
+        <div class="col-3">
+          <a th:href="@{/my-offers}">
+            <h5>My Offers</h5>
+          </a>
         </div>
-        <div class="col">
-          <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Log out" />
-          </form>
+        <div class="col-1">
+          <a th:href="@{/login?logout}">
+            <img src="https://image.flaticon.com/icons/svg/1828/1828427.svg" width="20" height="20" alt="">
+          </a>
         </div>
       </div>
       <br>
