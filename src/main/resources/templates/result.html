@@ -97,49 +97,39 @@
     </div>
     <div class=" result-container">
       <div class="card" th:each="result:${results}">
-        <div class="card-body"  style="justify-content: space-between;">
-          <div class="row" style="justify-content: space-between;">
-            <div class="col" >
-              From: <span th:utext="${result.startOrt}" ></span>
+        <div class="card-body" style="justify-content: space-between;">
+          <div class="row" style= "justify-content: space-between;">
+            <div class="col">
+              <b>From:</b>   <span th:utext="${result.startOrt}"></span>
             </div>
             <div class="col"></div>
             <div class="col">
-              To: <span th:utext="${result.zielOrt}" ></span>
+            <b>To:</b>  <span th:utext="${result.zielOrt}"></span>
             </div>
           </div>
           <div class="row d-flex justify-content-between">
             <div class="col">
-              <span th:utext="${#dates.format(result.datum, 'dd.MM.yyyy')}" ></span>
+              <span th:utext="${#dates.format(result.datum, 'dd.MM.yyyy')}"></span>
             </div>
             <div class="col"></div>
             <div class="col">
-              With: <span th:utext="${result.fahrzeugId}" ></span>
+               <b>With:</b> <span th:utext="${result.fahrzeugId}"></span>
             </div>
           </div>
           <div class="row d-flex justify-content-between">
             <div class="col">
-              Package: <span th:utext="${result.weight}" > </span> kg
+             <b>Package:</b>  <span th:utext="${result.weight}"></span> kg
             </div>
             <div class="col">
-              <span th:utext="${result.height}" ></span>x<span th:utext="${result.width}" ></span>x<span th:utext="${result.depth}" ></span>
+             <span th:utext="${result.height}"></span>x<span th:utext="${result.width}" ></span>x<span th:utext="${result.depth}" ></span>
             </div>
             <div class="col">
-              Price: <span th:utext="${result.price}" > </span> €
+            <b>Price:</b>  <span th:utext="${result.price}" ></span> €
             </div>
-          </div>
-        </div><div class="card-footer">
-          <div class="d-flex ">
-            <a id="driverPicture" th:href="@{/reviews(id=${result.userId})}">
-              <img src="https://image.flaticon.com/icons/svg/2948/2948035.svg">
-            </a>
-            <small id="driverName" th:utext="${result.userFullName}" ></small>
-            <a class="ml-auto" href="#">
-              <img src="https://image.flaticon.com/icons/svg/892/892529.svg"  >
-            </a>
           </div>
         </div>
       </div>
-
+      <br>
     </div>
     
   </div>

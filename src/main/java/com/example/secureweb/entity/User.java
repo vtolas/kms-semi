@@ -1,19 +1,24 @@
 package com.example.secureweb.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.Set;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+
+
 @Entity
 @Table(name = "auth_user")
 public class User {
@@ -118,7 +123,6 @@ public class User {
 	public Date getBday() { return bday; }
 
 	public void setBday(Date bday) { this.bday = bday; }
-
 
 
 }
