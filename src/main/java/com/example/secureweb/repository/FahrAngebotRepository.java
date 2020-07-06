@@ -1,4 +1,4 @@
-package com.example.secureweb.repository;
+ackage com.example.secureweb.repository;
 
 import com.example.secureweb.entity.FahrAngebot;
 import org.springframework.data.jpa.repository.JpaRepository;

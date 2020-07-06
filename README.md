@@ -10,6 +10,8 @@
 
 #### created by @BenSchokoRiegel, @AlaaElBouhdidi, @vtolas
 #### for university course: Konzepte Moderner Softwareentwicklung
+#### Prerequisites
+- mysql or mariadb installation
 #### Run project
 - Open Terminal
 - type **./gradlew bootRun**
