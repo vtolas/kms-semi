@@ -108,7 +108,7 @@
             </div>
             <div class="col">
                 <h4 th:utext="${user.email}" ></h4>
-                <h4 th:utext="${user.name} ${user.lastName}" ></h4>
+                <h4 th:utext="${user.name+' '+user.lastName}"></h4>
             </div>
             <div class="col-1">
                 <a href="/login?logout">
