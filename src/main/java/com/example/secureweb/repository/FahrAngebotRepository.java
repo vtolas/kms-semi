@@ -8,5 +8,5 @@ import java.util.Date;
 import java.util.List;
 @Repository
 public interface FahrAngebotRepository extends JpaRepository<FahrAngebot, Integer> {
-    public List<FahrAngebot> findByStartOrtIsLikeOrZielOrtIsLikeOrDatumAfter(String startOrt, String zielOrt, Date datum);
+    public List<FahrAngebot> findByStartOrtIsLikeAndZielOrtIsLikeAndDatumAfter(String startOrt, String zielOrt, Date datum);
 }

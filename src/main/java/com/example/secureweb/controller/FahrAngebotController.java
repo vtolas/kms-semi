@@ -34,14 +34,14 @@ public class FahrAngebotController {
 
     @PostMapping("/addFahrangebot")
     public RedirectView addFA(FahrAngebot fa, RedirectAttributes redir){
-
+        User user = new User();
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (!(authentication instanceof AnonymousAuthenticationToken)) {
             String currentUserName = authentication.getName();
-            System.out.println("User is: "+currentUserName);
-            fa.setUser(currentUserName);
+            user = userService.findByEmail(currentUserName);
         }
-
+        fa.setUserId(user.getId());
+        fa.setUser(user.getEmail());
         service.saveFahrAngebot(fa);
 
         RedirectView  redirectView= new RedirectView("/my-offers",true);
